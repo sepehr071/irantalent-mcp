@@ -271,7 +271,9 @@ async def it_top_companies() -> dict:
     it_company_reviews with the id.
     """
     d = await fetch("candidate/brand/best-companies")
-    return {"companies": [_company_row(x) for x in d["data"]]}
+    rows = [_company_row(x) for x in d["data"]]
+    rows.sort(key=lambda r: (-(r["rating"] or 0), -(r["ratings_count"] or 0)))  # the site's order is not by rating
+    return {"companies": rows}
 
 
 @tool("Company profile")

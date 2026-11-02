@@ -142,6 +142,8 @@ async def test_top_companies(client, api):
     api[P + "candidate/brand/best-companies"] = fixture("best.json")
     r = (await client.call_tool("it_top_companies", {})).structured_content
     assert len(r["companies"]) == 3 and r["companies"][0]["id"]
+    ratings = [c["rating"] or 0 for c in r["companies"]]
+    assert ratings == sorted(ratings, reverse=True)
 
 
 async def test_lookups(client, api):
