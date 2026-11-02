@@ -64,7 +64,7 @@ Example prompts:
 | `it_search_jobs` | Jobs by keyword and filters (slugs), 30 per page, newest first |
 | `it_job` | One ad in full |
 | `it_companies` | Search the company directory by name |
-| `it_top_companies` | 50 best rated companies |
+| `it_top_companies` | 50 best rated companies, sorted by rating (then rating count) |
 | `it_company` | Profile, rating breakdown, newest jobs |
 | `it_company_reviews` | Employee reviews, 30 per page |
 | `it_lookups` | Filter slugs: categories, industries, seniority, employment, company size, locations, work types, salary specialties and seniority |
